@@ -1,13 +1,15 @@
-This is a template/skeleton for c++ application.
-It uses cmake and conan as build and package manager infra.
+# This is a template/skeleton for c++ application.
 
-How to use it -
+## It uses cmake and conan as build and package manager infra.
 
-1. clone this repository
-2. change project name in root's CMakeLists.txt
-3. Edit conanfile.txt as per your need.
-4. create build directory in root folder.
-5. cd to root and -
-   a. conan install ..
-   b. cmake ..
-   c. make
+# How to use it -
+
+- clone this repository.
+- run setup.sh to clean up old git references.
+- change project name in root's CMakeLists.txt.
+- Edit conanfile.txt as per your need.
+- create build directory in root folder.
+- cd to root and -
+  - conan install ..
+  - cmake ..
+  - make
