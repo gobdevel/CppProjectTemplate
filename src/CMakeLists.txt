@@ -2,7 +2,7 @@ project(${PROJECT_NAME})
 
 set(LIBNAME ${PROJECT_NAME}_lib)
 
-add_library(${LIBNAME} app.cpp logger.cpp)
+add_library(${LIBNAME} app.cpp logger.cpp config.cpp)
 target_include_directories(
     ${LIBNAME}
     PUBLIC

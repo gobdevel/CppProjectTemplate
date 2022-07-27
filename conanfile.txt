@@ -1,6 +1,7 @@
 [requires]
 doctest/2.4.9
 spdlog/1.10.0
+inih/56
 #libev/4.33
 
 [generators]
