@@ -7,5 +7,5 @@ set(TESTNAME ${PROJECT_NAME}_test)
 enable_testing()
 
 add_executable(${TESTNAME} sampleTest.cpp)
-target_link_libraries(${TESTNAME} ${LIBNAME} ${CONAN_LIBS})
+target_link_libraries(${TESTNAME} ${LIBNAME} infra ${CONAN_LIBS})
 add_test(NAME ${TESTNAME} COMMAND $<TARGET_FILE:${TESTNAME}> --no-version)

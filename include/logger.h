@@ -1,39 +1,42 @@
 #pragma once
-#include "spdlog/sinks/stdout_color_sinks.h"
 #include "spdlog/spdlog.h"
 
-class Logger
+namespace Infra
 {
-public:
-  static void init();
-
-  template <typename... Args>
-  static void info(const std::string msg, Args &&...args)
+  class Logger
   {
-    if (s_logger)
-    {
-      s_logger->info(msg, std::forward<Args>(args)...);
-    }
-  }
+  public:
+    static void init();
+    static void init(const std::string appName, const std::string filename);
 
-  template <typename... Args>
-  static void warn(const std::string msg, Args &&...args)
-  {
-    if (s_logger)
+    template <typename... Args>
+    static void info(const std::string msg, Args &&...args)
     {
-      s_logger->warn(msg, std::forward<Args>(args)...);
+      if (s_logger)
+      {
+        s_logger->info(msg, std::forward<Args>(args)...);
+      }
     }
-  }
 
-  template <typename... Args>
-  static void error(const std::string msg, Args &&...args)
-  {
-    if (s_logger)
+    template <typename... Args>
+    static void warn(const std::string msg, Args &&...args)
     {
-      s_logger->error(msg, std::forward<Args>(args)...);
+      if (s_logger)
+      {
+        s_logger->warn(msg, std::forward<Args>(args)...);
+      }
     }
-  }
 
-private:
-  static std::shared_ptr<spdlog::logger> s_logger;
-};
+    template <typename... Args>
+    static void error(const std::string msg, Args &&...args)
+    {
+      if (s_logger)
+      {
+        s_logger->error(msg, std::forward<Args>(args)...);
+      }
+    }
+
+  private:
+    static std::shared_ptr<spdlog::logger> s_logger;
+  };
+}

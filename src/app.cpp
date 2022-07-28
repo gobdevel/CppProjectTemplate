@@ -1,12 +1,13 @@
 #include "app.h"
 #include "logger.h"
 
+using namespace Infra;
+
 void App::init()
 {
-  Logger::init();
-  Logger::info("Initialised app {}", 22);
+  Logger::info("Initialised app");
 }
 
-void App::run() { Logger::warn("Initialised app..."); }
+void App::run() { Logger::warn("App is running ..."); }
 
-void App::stop() { Logger::error("Initialised app..."); }
+void App::stop() { Logger::error("Stopping app ..."); }

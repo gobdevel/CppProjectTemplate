@@ -2,6 +2,8 @@
 #include "doctest/doctest.h"
 #include "config.h"
 
+using namespace Infra;
+
 TEST_CASE("Testing Config file")
 {
   Config c = Config::getInstance();

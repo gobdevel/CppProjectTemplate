@@ -17,6 +17,7 @@ option(BUILD_TESTS "Whether or not to build tests" ON)
 
 # Add all subdirectories
 add_subdirectory(include)
+add_subdirectory(infra)
 add_subdirectory(src)
 add_subdirectory(app)
 

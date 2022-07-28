@@ -4,16 +4,20 @@
 
 class INIReader;
 
-class Config
+namespace Infra
 {
-public:
-    void init(const std::string filename);
-    std::optional<std::string> getString(const std::string section, const std::string key);
-    std::optional<int> getInt(std::string section, std::string key);
+    class Config
+    {
+    public:
+        void init(const std::string filename);
+        std::optional<std::string> getString(const std::string section, const std::string key);
+        std::optional<int> getInt(std::string section, std::string key);
 
-    static Config &getInstance();
+        static Config &getInstance();
 
-private:
-    Config() = default;
-    INIReader *m_reader{nullptr};
-};
+    private:
+        Config() = default;
+        INIReader *m_reader{nullptr};
+    };
+
+}
