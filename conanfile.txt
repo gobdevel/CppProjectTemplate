@@ -1,7 +1,7 @@
 [requires]
 doctest/2.4.9
-spdlog/1.10.0
-inih/56
+spdlog/1.11.0
+argparse/2.9
 #libev/4.33
 
 [generators]
