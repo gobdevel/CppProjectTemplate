@@ -1,10 +1,9 @@
 #pragma once
 #include "app.h"
 
-class App
-{
+class App {
 public:
-  void init();
-  void run();
-  void stop();
+    void init();
+    void run();
+    void stop();
 };

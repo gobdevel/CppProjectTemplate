@@ -1,4 +1,5 @@
 #pragma once
+#include "spdlog/common.h"
 #include "spdlog/spdlog.h"
 
 namespace Infra {
@@ -26,6 +27,11 @@ public:
         if (s_logger) {
             s_logger->error(msg, std::forward<Args>(args)...);
         }
+    }
+
+    static void setLogLevel(const std::string &loglevel) {
+        auto level = spdlog::level::from_str(loglevel);
+        s_logger->set_level(level);
     }
 
 private:

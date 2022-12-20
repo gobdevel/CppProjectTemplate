@@ -30,7 +30,10 @@ std::optional<std::string> Config::getString(std::string section,
                                              std::string key) {
     std::optional<std::string> ret;
     if (m_reader) {
-        ret = m_reader->Get(section, key, "");
+        auto val = m_reader->Get(section, key, "");
+        if (!val.empty()){
+            ret = val;
+        }
     }
     return ret;
 }
